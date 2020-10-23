@@ -13,5 +13,21 @@ List<DemoItem> buildNativeDemoItems(String codePath) {
       documentationUrl: 'https://flutter.cn/',
       buildRoute: (context) => BaseWidget('native 与原生交互', codePath + 'native', AppBarPage()),
     ),
+    DemoItem(
+      icon: Icons.important_devices,
+      title: 'Native 嵌入原生View-Android',
+      subtitle: '简介',
+      keyword: 'native',
+      documentationUrl: 'https://flutter.cn/',
+      buildRoute: (context) => BaseWidget('native 嵌入原生View-Android', codePath + 'android', AppBarPage()),
+    ),
+    DemoItem(
+      icon: Icons.important_devices,
+      title: 'Native 嵌入原生View-iOS',
+      subtitle: '简介',
+      keyword: 'native',
+      documentationUrl: 'https://flutter.cn/',
+      buildRoute: (context) => BaseWidget('native 嵌入原生View-iOS', codePath + 'ios', AppBarPage()),
+    ),
   ];
 }
