@@ -1,0 +1,71 @@
+# Flutter实现路由页面切换方式为左右滑动
+
+## 1.创建一个页面继承PageRouteBuilder
+
+```
+class MyPageRoute extends PageRouteBuilder
+```
+
+## 2.里面新建一个Widget对象
+
+```
+final Widget pushTo;
+```
+
+## 3.页面构建是添加动画
+
+```
+pageBuilder: (BuildContext context, Animation<double> animation1,
+              Animation<double> animation2) {
+            return pushTo;
+          }
+```
+
+## 4.所有代码
+
+```
+class MyPageRoute extends PageRouteBuilder {
+  final Widget pushTo;
+
+  MyPageRoute({@required this.pushTo})
+      : super(
+          barrierColor: null,
+          barrierLabel: null,
+          barrierDismissible: false,
+          transitionDuration: Duration(milliseconds: 500),
+          pageBuilder: (BuildContext context, Animation<double> animation1,
+              Animation<double> animation2) {
+            return pushTo;
+          },
+          transitionsBuilder: (BuildContext context,
+              Animation<double> animation1,
+              Animation<double> animation2,
+              Widget child) {
+            //左右滑动
+            return SlideTransition(
+              position:
+                  Tween<Offset>(begin: Offset(1.0, 0.0), end: Offset(0.0, 0.0))
+                      .animate(CurvedAnimation(
+                          parent: animation1, curve: Curves.fastOutSlowIn)),
+              child: Platform.isAndroid?child:Container(
+                child: child,
+                decoration: BoxDecoration(
+                  boxShadow: [BoxShadow(offset: Offset(-10, 10),blurRadius: 10,spreadRadius:5,color: MyColorStyle.SHADOW_COLOR_GREY_E3)]
+                ),
+              ),
+            );
+          },
+        );
+}
+```
+
+## 5.怎样使用
+
+```
+    Navigator.push(
+        context,
+        MyPageRoute(
+            pushTo: SearchResultPage(
+            info: info,
+        )));
+```
