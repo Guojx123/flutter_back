@@ -9,7 +9,7 @@ class MyBasicMessageChannel extends StatefulWidget {
 class _MyBasicMessageChannelState extends State<MyBasicMessageChannel> {
 
   static const BasicMessageChannel _basicMessageChannel = const BasicMessageChannel('flutter_demo_jiaohu.flutter.io/basic_message_channel', StandardMessageCodec());
-  //用户名的控制器
+  //用户名的控 制器
   TextEditingController userController = TextEditingController();
   List<String> list = new List<String>();
   ScrollController _scrollController = new ScrollController();
@@ -27,9 +27,8 @@ class _MyBasicMessageChannelState extends State<MyBasicMessageChannel> {
         child: Column(
           children: <Widget>[
             SizedBox(height: 25,),
-            Text('F:/VscodeProject/flutter_demo_jiaohu'),
+            Text('D:/ProjectName/flutter_back/'),
             SizedBox(height: 25,),
-
             Expanded(
               flex: 1,
               child: ListView.builder(
@@ -105,8 +104,7 @@ class _MyBasicMessageChannelState extends State<MyBasicMessageChannel> {
                   )
                 ],
               ),
-            )
-            
+            ),
           ],
         ),
       ),
