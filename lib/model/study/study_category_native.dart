@@ -11,7 +11,7 @@ List<DemoItem> buildNativeDemoItems(String codePath) {
       subtitle: '简介',
       keyword: 'native',
       documentationUrl: 'https://flutter.cn/',
-      buildRoute: (context) => BaseWidget('native 与原生交互', codePath + 'native', AppBarPage()),
+      buildRoute: (context) => BaseWidget('native 与原生交互', codePath + 'native', AppBarPage(),isMarkDown: true,),
     ),
     DemoItem(
       icon: Icons.important_devices,
