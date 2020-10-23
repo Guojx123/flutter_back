@@ -37,9 +37,6 @@ class _NativePageState extends State<NativePage> {
             child: Text('EventChannel'),
             onPressed: (){
               Navigator.of(context).push(MaterialPageRoute(builder: (context) => MyEventChannel()));
-              // Navigator.of(context).push(MaterialPageRoute(builder: (context) => MyEventChannel())).then((value){
-              //   print('_result' + value);
-              // });
             },
           ),
           SizedBox(height: 25,),
