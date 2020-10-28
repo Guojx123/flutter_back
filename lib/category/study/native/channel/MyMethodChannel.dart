@@ -7,13 +7,18 @@ class MyMethodChannel extends StatefulWidget {
 }
 
 class _MyMethodChannelState extends State<MyMethodChannel> {
-  static const MethodChannel _methodChannel = const MethodChannel('flutter_demo_jiaohu.flutter.io/method_channel');
-  String _batteryLevel = 'Unknown battery level.';
+  static const MethodChannel _methodChannel = const MethodChannel('com.flutter.guide.MethodChannel');
+  int _nativeData = 0;
 
   @override
   void initState() {
     super.initState();
-    _getBatteryLevel();
+    _methodChannel.setMethodCallHandler((call) {
+      setState(() {
+        _nativeData = call.arguments['count'];
+      });
+      return null;
+    });
   }
 
   @override
@@ -21,23 +26,9 @@ class _MyMethodChannelState extends State<MyMethodChannel> {
     return Scaffold(
       appBar: AppBar(title: Text('原生交互 - BasicMessageChannel'),),
       body: Center(
-        child: Text(_batteryLevel),
+        child: Text("原生返回数据：${_nativeData.toString()}\n（每一秒自增1）"),
       ),
     );
   }
 
-  Future<Null> _getBatteryLevel() async {
-    String batteryLevel;
-    try {
-      //调用原生方法，接收返回的数据
-      final int result = await _methodChannel.invokeMethod('getBatteryLevel',"Flutter Message");
-      batteryLevel = 'Battery level at $result % .';
-    } on PlatformException catch (e) {
-      batteryLevel = "Failed to get battery level: '${e.message}'.";
-    }
-
-    setState(() {
-      _batteryLevel = batteryLevel;
-    });
-  }
 }

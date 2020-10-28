@@ -8,8 +8,8 @@ class MyBasicMessageChannel extends StatefulWidget {
 
 class _MyBasicMessageChannelState extends State<MyBasicMessageChannel> {
 
-  static const BasicMessageChannel _basicMessageChannel = const BasicMessageChannel('flutter_demo_jiaohu.flutter.io/basic_message_channel', StandardMessageCodec());
-  //用户名的控 制器
+  static const BasicMessageChannel _basicMessageChannel = const BasicMessageChannel('com.flutter.guide.BasicMessageChannel', StandardMessageCodec());
+  //用户名的控制器
   TextEditingController userController = TextEditingController();
   List<String> list = new List<String>();
   ScrollController _scrollController = new ScrollController();

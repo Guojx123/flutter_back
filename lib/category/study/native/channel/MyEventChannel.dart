@@ -9,7 +9,7 @@ class MyEventChannel extends StatefulWidget {
 }
 
 class _MyEventChannelState extends State<MyEventChannel> {
-  static const EventChannel _eventChannel = const EventChannel('flutter_demo_jiaohu.flutter.io/event_channel');
+  static const EventChannel _eventChannel = const EventChannel('com.flutter.guide.EventChannel');
   StreamSubscription _streamSubscription;
   Object obj;
   
@@ -58,7 +58,7 @@ class _MyEventChannelState extends State<MyEventChannel> {
   }
 
   void _onError(Object error) {
-    print('Flutter - 返回的错误');
+    print('Flutter - 返回错误');
     setState(() {
       obj = error;
     });
