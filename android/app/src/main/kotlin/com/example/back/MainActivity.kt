@@ -7,7 +7,10 @@ import io.flutter.plugins.GeneratedPluginRegistrant
 
 class MainActivity: FlutterActivity() {
     override fun configureFlutterEngine(@NonNull flutterEngine: FlutterEngine) {
-        GeneratedPluginRegistrant.registerWith(flutterEngine);
-        BasicMessageChannelDemo(flutterEngine.dartExecutor.binaryMessenger)
+        super.configureFlutterEngine(flutterEngine)
+        GeneratedPluginRegistrant.registerWith(flutterEngine)
+        BasicMessageChannelDemo(this,flutterEngine.dartExecutor.binaryMessenger)
+        MethodChannelDemo(this,flutterEngine.dartExecutor.binaryMessenger)
+        EventChannelDemo(this,flutterEngine.dartExecutor.binaryMessenger)
     }
 }

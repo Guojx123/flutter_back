@@ -14,9 +14,8 @@ class BasicMessageChannelDemo(var activity: Activity, messenger: BinaryMessenger
     private var channel: BasicMessageChannel<Any>
 
     init {
-        channel = BasicMessageChannel(messenger, "flutter_demo_jiaohu.flutter.io/basic_message_channel", StandardMessageCodec())
+        channel = BasicMessageChannel(messenger, "com.flutter.guide.BasicMessageChannel", StandardMessageCodec())
         channel.setMessageHandler(this)
-        startTimer()
     }
 //    Map数据
 //    override fun onMessage(message: Any?, reply: BasicMessageChannel.Reply<Any>) {
@@ -34,20 +33,5 @@ class BasicMessageChannelDemo(var activity: Activity, messenger: BinaryMessenger
         println("activity-onMessage--flutter传来得数据: ${message.toString()}")
         reply.reply(count++.toString() + " 你回复的：" + message.toString())
     }
-
-    fun startTimer() {
-        var timer = Timer().schedule(timerTask {
-            activity.runOnUiThread {
-                var map = mapOf("count" to count++)
-                channel.send(map,object :BasicMessageChannel.Reply<Any>{
-                    override fun reply(reply: Any?) {
-
-                    }
-                })
-            }
-        }, 0, 1000)
-
-    }
-
-
+    
 }

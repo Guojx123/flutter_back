@@ -1,7 +1,9 @@
+import 'package:back/category/study/widgets/CommonRow.dart';
 import 'package:back/widgets/multi_selection_widget.dart';
 import 'package:back/widgets/subtitle_widget.dart';
 import 'package:back/widgets/title_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:back/category/study/widgets/CommonInputRow.dart';
 
 class RowPage extends StatefulWidget {
   @override
@@ -170,6 +172,16 @@ class _RowPageState extends State<RowPage> {
               textDirectionSelection = value;
             });
           },
+        ),
+        TitleWidget("横向输入框"),
+        CommonInputRow(
+          title: "测试",
+          hintText: "请输入",
+        ),
+        TitleWidget("横向选择"),
+        CommonRow(
+          title: "个人资料",
+          isShowArrowIcon: true,
         ),
       ],
     );
