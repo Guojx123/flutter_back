@@ -11,6 +11,7 @@ class MethodChannelDemo(var activity: Activity, messenger: BinaryMessenger) : Me
 
     private var channel: MethodChannel
     private var count = 0
+    var map = {}
 
     init {
         channel = MethodChannel(messenger, "com.flutter.guide.MethodChannel")
@@ -22,15 +23,15 @@ class MethodChannelDemo(var activity: Activity, messenger: BinaryMessenger) : Me
     fun startTimer() {
         var timer = Timer().schedule(timerTask {
             activity.runOnUiThread {
-                var map = mapOf("count" to count++)
-                channel.invokeMethod("timer", map)
+                map = mapOf("count" to count++)
             }
         }, 0, 1000)
 
     }
 
     override fun onMethodCall(call: MethodCall, result: MethodChannel.Result) {
-
+        channel.invokeMethod("timer", map)
+        System.out.println("响应")
     }
 
 }

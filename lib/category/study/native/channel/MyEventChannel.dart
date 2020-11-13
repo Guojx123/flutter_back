@@ -32,7 +32,7 @@ class _MyEventChannelState extends State<MyEventChannel> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('原生交互 - BasicMessageChannel'),),
+      appBar: AppBar(title: Text('原生交互 - MyEventChannel'),),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

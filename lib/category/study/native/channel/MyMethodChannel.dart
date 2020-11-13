@@ -24,7 +24,7 @@ class _MyMethodChannelState extends State<MyMethodChannel> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('原生交互 - BasicMessageChannel'),),
+      appBar: AppBar(title: Text('原生交互 - MyMethodChannel'),),
       body: Center(
         child: Text("原生返回数据：${_nativeData.toString()}\n（每一秒自增1）"),
       ),
