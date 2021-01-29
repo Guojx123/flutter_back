@@ -23,7 +23,7 @@ class MethodChannelDemo(var activity: Activity, messenger: BinaryMessenger) : Me
     fun startTimer() {
         var timer = Timer().schedule(timerTask {
             activity.runOnUiThread {
-                map = mapOf("count" to count++)
+//                map = mapOf("count" to count++)
             }
         }, 0, 1000)
 
