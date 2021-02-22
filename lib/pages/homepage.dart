@@ -1,6 +1,7 @@
 import 'package:back/Pages/mainpage_page_header.dart';
 import 'package:back/Pages/mainpage_page_layout.dart';
 import 'package:back/pages/study/study_mainpage.dart';
+import 'package:back/widgets/background_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

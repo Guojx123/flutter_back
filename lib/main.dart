@@ -8,26 +8,35 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 
-void main() async {
+void main() => realRunApp();
+
+void realRunApp() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  // 竖屏
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]);
 
   runApp(
     MultiProvider(
-    providers: [
-      Provider(create: (_) => 1008),
-      ChangeNotifierProvider(create: (_) => ChangeNotifyModel()),
-      ValueListenableProvider<ValueNotifyModel>(
-        create: (_) => ValueNotifyModelWrapper(ValueNotifyModel(0)),
-        updateShouldNotify: (previous, current) => previous.value != current.value,
-      ),
-      StreamProvider<int>(
-        create: (_) => ProviderStream().stream,
-        initialData: 0,
-      ),
-      FutureProvider(create: (_) => providerFuture()),
-      ChangeNotifierProvider(create: (_) => SelectorModel()),
-    ],
-    child: MyApp(),
-  ),);
+      providers: [
+        Provider(create: (_) => 1008),
+        ChangeNotifierProvider(create: (_) => ChangeNotifyModel()),
+        ValueListenableProvider<ValueNotifyModel>(
+          create: (_) => ValueNotifyModelWrapper(ValueNotifyModel(0)),
+          updateShouldNotify: (previous, current) => previous.value != current.value,
+        ),
+        StreamProvider<int>(
+          create: (_) => ProviderStream().stream,
+          initialData: 0,
+        ),
+        FutureProvider(create: (_) => providerFuture()),
+        ChangeNotifierProvider(create: (_) => SelectorModel()),
+      ],
+      child: MyApp(),
+    ),);
 }
 
 

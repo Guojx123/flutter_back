@@ -39,6 +39,12 @@ dependencies:
   date_format: ^1.0.8
   image:
   markdown_widget: ^1.2.4
+  # 动画
+  simple_animations: ^2.5.0
+  # GetX
+  get: ^3.24.0
+  get_storage: ^1.3.2
+
 
 dev_dependencies:
   flutter_test:
