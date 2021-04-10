@@ -1,9 +1,11 @@
 import 'package:back/Pages/mainpage_page_header.dart';
 import 'package:back/Pages/mainpage_page_layout.dart';
-import 'package:back/pages/study/study_mainpage.dart';
+import 'package:back/pages/study/study_main_page.dart';
 import 'package:back/widgets/background_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import 'skill/skill_main_page.dart';
 
 class MyHomePage extends StatefulWidget {
   final String title;
@@ -84,7 +86,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           'Show UI Pattern in most Apps \n展示大多数应用的UI样式',
                           'images/skill_bg.png',
                               () {
-                            // Navigator.push(context, MaterialPageRoute(builder: (context) => SkillMainPage()));
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => SkillMainPage()));
                           },
                         ),
                         PageWidget(

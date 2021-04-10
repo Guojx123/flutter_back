@@ -2,7 +2,7 @@ import 'package:back/Model/study/study_category.dart';
 import 'package:flutter/material.dart';
 
 import 'study_category_demo_list.dart';
-import 'study_mainpage_list_item.dart';
+import 'study_main_page_list_item.dart';
 
 class StudyMainPage extends StatelessWidget {
   @override
