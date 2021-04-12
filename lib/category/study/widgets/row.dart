@@ -1,9 +1,9 @@
-import 'package:back/category/study/widgets/CommonRow.dart';
+import 'file:///E:/flutter_back/lib/widgets/common_row.dart';
 import 'package:back/widgets/multi_selection_widget.dart';
 import 'package:back/widgets/subtitle_widget.dart';
 import 'package:back/widgets/title_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:back/category/study/widgets/CommonInputRow.dart';
+import 'file:///E:/flutter_back/lib/widgets/commonInput_row.dart';
 
 class RowPage extends StatefulWidget {
   @override

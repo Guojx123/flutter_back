@@ -8,17 +8,17 @@ class SkillMainPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('开发技巧'),
-        backgroundColor: Color(0xFF736AB7).withOpacity(0.8),
+        backgroundColor: Color(0xFF81BF4E).withOpacity(0.8),
         elevation: 0,
       ),
       body: Container(
-        color: Color(0xFF736AB7).withOpacity(0.8),
+        color: Color(0xFF81BF4E).withOpacity(0.8),
         child: ListView.builder(
           itemBuilder: (context, index) {
-            var itemCategory = buildSkillCategoryList[index];
+            SkillItemCategory itemCategory = buildSkillCategoryList[index];
             return SkillMainPageListItem(
               itemCategory.name,
-                itemCategory.itemList,
+              itemCategory.itemList,
             );
           },
           itemCount: buildSkillCategoryList.length,

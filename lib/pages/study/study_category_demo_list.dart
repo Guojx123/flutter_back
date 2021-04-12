@@ -21,7 +21,8 @@ class StudyCategoryDemoList extends StatelessWidget {
         child: ListView.builder(
           itemBuilder: (context, index) {
             var demo = demoList[index];
-            return StudyCategoryDemoListItem(demo.title, demo.subtitle, demo.icon, () {
+            return StudyCategoryDemoListItem(
+                demo.title, demo.subtitle, demo.icon, () {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: demo.buildRoute),

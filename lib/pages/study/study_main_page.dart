@@ -10,11 +10,11 @@ class StudyMainPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('学习路线'),
-        backgroundColor: Color(0xFF736AB7).withOpacity(0.8),
+        backgroundColor: Color(0xFF03A89E).withOpacity(0.8),
         elevation: 0,
       ),
       body: Container(
-        color: Color(0xFF736AB7).withOpacity(0.8),
+        color: Color(0xFF03A89E).withOpacity(0.8),
         child: ListView.builder(
           itemBuilder: (context, index) {
             var itemCategory = buildStudyCategoryList[index];

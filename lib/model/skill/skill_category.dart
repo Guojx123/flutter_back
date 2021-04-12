@@ -1,29 +1,18 @@
-import 'package:flutter/material.dart';
+import 'package:back/widgets/demo_item.dart';
+import 'package:back/model/skill/skill_category_design_patterns.dart';
 
 List<SkillItemCategory> buildSkillCategoryList = [
-  designPatterns,
+  designPatternsCreate,
 ];
 
-SkillItemCategory designPatterns = SkillItemCategory(
+SkillItemCategory designPatternsCreate = SkillItemCategory(
   name: '设计模式',
-  itemList: [
-    ListTile(
-      title: Text('测试1'),
-    ),
-    ListTile(
-      title: Text('测试2'),
-    ),
-    ListTile(
-      title: Text('测试3'),
-    ),
-  ],
+  itemList: buildDesignPatternsCreateDemoItems('lib/category/skill/patterns/'),
 );
-
-
 
 class SkillItemCategory {
   final String name;
-  final List<Widget> itemList;
+  final List<DemoItem> itemList;
 
   SkillItemCategory({this.name, this.itemList});
 }
