@@ -78,6 +78,7 @@ class _BaseWidgetState extends State<BaseWidget> {
                     ),
                   );
                 }else{
+                  debugPrint('Gino codePath -> ${widget.codePath}');
                   Navigator.push(
                     context,
                     MaterialPageRoute(

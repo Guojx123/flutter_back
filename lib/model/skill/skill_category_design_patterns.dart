@@ -1,3 +1,4 @@
+import 'package:back/category/skill/patterns/singleton.dart';
 import 'package:back/widgets/demo_item.dart';
 import 'package:flutter/material.dart';
 import 'package:back/Widgets/base_widget.dart';
@@ -11,15 +12,15 @@ List<DemoItem> buildDesignPatternsCreateDemoItems(String codePath){
       subtitle: '简介',
       keyword: 'singleton_create',
       documentationUrl: 'https://flutter.cn/',
-      buildRoute: (context) => BaseWidget('单例模式', codePath + 'singleton_create', ConfigPage(),isMarkDown:true),
+      buildRoute: (context) => BaseWidget('单例模式', codePath + 'singleton', SingletonPage()),
     ),
     DemoItem(
       icon: Icons.design_services,
-      title: '工厂模式',
+      title: '工厂模式-创建型',
       subtitle: '简介',
-      keyword: 'designPatterns',
+      keyword: 'factory',
       documentationUrl: 'https://flutter.cn/',
-      buildRoute: (context) => BaseWidget('工厂模式', codePath + 'app', ConfigPage(),isMarkDown:true),
+      buildRoute: (context) => BaseWidget('工厂模式', codePath + 'factory', ConfigPage(),isMarkDown:true),
     ),
   ];
 }
