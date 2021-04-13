@@ -6,6 +6,7 @@ import 'package:back/Utils/navigatormanager.dart';
 import 'package:back/Widgets/notfound.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 
 void main() => realRunApp();
@@ -26,7 +27,8 @@ void realRunApp() async {
         ChangeNotifierProvider(create: (_) => ChangeNotifyModel()),
         ValueListenableProvider<ValueNotifyModel>(
           create: (_) => ValueNotifyModelWrapper(ValueNotifyModel(0)),
-          updateShouldNotify: (previous, current) => previous.value != current.value,
+          updateShouldNotify: (previous, current) =>
+              previous.value != current.value,
         ),
         StreamProvider<int>(
           create: (_) => ProviderStream().stream,
@@ -36,9 +38,9 @@ void realRunApp() async {
         ChangeNotifierProvider(create: (_) => SelectorModel()),
       ],
       child: MyApp(),
-    ),);
+    ),
+  );
 }
-
 
 SystemUiOverlayStyle setNavigationBarTextColor(bool light) {
   return SystemUiOverlayStyle(
@@ -57,23 +59,23 @@ class MyApp extends StatelessWidget {
     if (Platform.isAndroid) {
       // 在组件渲染之后，再覆写状态栏颜色
       // 如果使用了APPBar，则需要修改brightness属性
-      SystemUiOverlayStyle systemUiOverlayStyle = SystemUiOverlayStyle(statusBarColor: Colors.transparent);
+      SystemUiOverlayStyle systemUiOverlayStyle =
+          SystemUiOverlayStyle(statusBarColor: Colors.transparent);
       SystemChrome.setSystemUIOverlayStyle(systemUiOverlayStyle);
     }
-    return MaterialApp(
-      title: 'Back',
-      theme: ThemeData(
-        primarySwatch: Colors.teal,
+    return GetMaterialApp(
+      home: MaterialApp(
+        title: 'Back',
+        theme: ThemeData(
+          primarySwatch: Colors.teal,
+        ),
+        home: MyHomePage(title: 'Back'),
+        onUnknownRoute: (RouteSettings setting) {
+          return MaterialPageRoute(builder: (context) => NotFoundWidget());
+        },
+        navigatorKey: RouteManager.navigatorKey,
+        navigatorObservers: [NavigatorManager.getInstance()],
       ),
-      home: MyHomePage(title: 'Back'),
-      onUnknownRoute: (RouteSettings setting) {
-        return MaterialPageRoute(builder: (context) => NotFoundWidget());
-      },
-      navigatorKey: RouteManager.navigatorKey,
-      navigatorObservers: [NavigatorManager.getInstance()],
     );
   }
 }
-
-
-

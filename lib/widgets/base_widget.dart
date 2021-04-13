@@ -8,7 +8,7 @@ import 'package:share/share.dart';
 class BaseWidget extends StatefulWidget {
   final String title;
   final Widget widget;
-  final String codePath;
+  final String codePath; //如果CodeView没有显示，请检查pubspec.yaml文件！
   final bool isMarkDown;
 
   BaseWidget(this.title, this.codePath, this.widget,{this.isMarkDown = false});

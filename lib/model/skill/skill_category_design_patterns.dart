@@ -1,10 +1,10 @@
-import 'package:back/category/skill/patterns/singleton.dart';
+import 'package:back/category/skill/patterns/factory_create.dart';
+import 'package:back/category/skill/patterns/singleton_create.dart';
 import 'package:back/widgets/demo_item.dart';
 import 'package:flutter/material.dart';
 import 'package:back/Widgets/base_widget.dart';
-import 'package:back/Category/Study/config/config.dart';
 
-List<DemoItem> buildDesignPatternsCreateDemoItems(String codePath){
+List<DemoItem> buildDesignPatternsCreateDemoItems(String codePath) {
   return [
     DemoItem(
       icon: Icons.design_services,
@@ -12,7 +12,8 @@ List<DemoItem> buildDesignPatternsCreateDemoItems(String codePath){
       subtitle: '简介',
       keyword: 'singleton_create',
       documentationUrl: 'https://flutter.cn/',
-      buildRoute: (context) => BaseWidget('单例模式', codePath + 'singleton', SingletonPage()),
+      buildRoute: (context) =>
+          BaseWidget('单例模式', codePath + 'singleton_create', SingletonPage()),
     ),
     DemoItem(
       icon: Icons.design_services,
@@ -20,7 +21,8 @@ List<DemoItem> buildDesignPatternsCreateDemoItems(String codePath){
       subtitle: '简介',
       keyword: 'factory',
       documentationUrl: 'https://flutter.cn/',
-      buildRoute: (context) => BaseWidget('工厂模式', codePath + 'factory', ConfigPage(),isMarkDown:true),
+      buildRoute: (context) =>
+          BaseWidget('工厂模式', codePath + 'factory_create', FactoryPage()),
     ),
   ];
 }
