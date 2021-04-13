@@ -34,7 +34,7 @@ class _SkillMainPageListItemState extends State<SkillMainPageListItem> {
   Widget listItem(String title, Function onTap) {
     return GestureDetector(
       child: Container(
-        margin: EdgeInsets.all(8),
+        margin: EdgeInsets.symmetric(horizontal: 8),
         child: Stack(
           children: <Widget>[
             Container(
@@ -42,16 +42,11 @@ class _SkillMainPageListItemState extends State<SkillMainPageListItem> {
               width: double.infinity,
               constraints: BoxConstraints(minHeight: 48),
               decoration: BoxDecoration(
-                color: Color.fromARGB(255, 114, 123, 225),
+                color: Color(0xFF2E8B57),
                 borderRadius: BorderRadius.circular(16),
               ),
               child: Container(
-                margin: EdgeInsets.only(
-                  left: 96,
-                  top: 24,
-                  bottom: 24,
-                  right: 24,
-                ),
+                margin: EdgeInsets.all(10),
                 child: Text(
                   title,
                   style: TextStyle(
