@@ -21,6 +21,7 @@ class _TextPageState extends State<TextPage> {
   @override
   Widget build(BuildContext context) {
     return ListView(
+      physics: BouncingScrollPhysics(),
       children: <Widget>[
         TitleWidget('Text基本使用'),
         Text('Simple text'),

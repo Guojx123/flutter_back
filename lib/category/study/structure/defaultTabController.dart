@@ -5,6 +5,7 @@ class DefaultTabControllerPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(
+      physics: BouncingScrollPhysics(),
       children: <Widget>[
         TitleWidget('DefaultTabController的基本使用'),
         Container(

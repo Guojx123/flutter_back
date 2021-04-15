@@ -7,9 +7,9 @@ import 'package:share/share.dart';
 
 class BaseWidget extends StatefulWidget {
   final String title;
-  final Widget widget;
-  final String codePath; //如果CodeView没有显示，请检查pubspec.yaml文件！
-  final bool isMarkDown;
+  final Widget widget; ///对应 Category/[type]/[value] 目录下的页面
+  final String codePath; ///如果CodeView没有显示，请检查pubspec.yaml文件！
+  final bool isMarkDown; /// 是否为MarkDown格式的文本
 
   BaseWidget(this.title, this.codePath, this.widget,{this.isMarkDown = false});
 
@@ -50,22 +50,6 @@ class _BaseWidgetState extends State<BaseWidget> {
           ),
           brightness: Brightness.light,
           actions: <Widget>[
-            // IconButton(
-            //   icon: Icon(collected ? Icons.star : Icons.star_border),
-            //   color: Colors.black54,
-            //   onPressed: () {
-            //     if (mounted) {
-            //       setState(() {
-            //         if (collected) {
-            //           collects.remove(widget.title);
-            //         } else {
-            //           collects.add(widget.title);
-            //         }
-            //         SpUtil.putStringList('collects', collects);
-            //       });
-            //     }
-            //   },
-            // ),
             IconButton(
               icon: Icon(Icons.code),
               color: Colors.black54,

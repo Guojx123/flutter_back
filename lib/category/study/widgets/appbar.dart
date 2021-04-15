@@ -28,6 +28,7 @@ class _AppBarPageState extends State<AppBarPage> with SingleTickerProviderStateM
   Widget build(BuildContext context) {
     return ListView(
       shrinkWrap: true,
+      physics: BouncingScrollPhysics(),
       children: <Widget>[
         TitleWidget('Appbar基本使用'),
         SubtitleWidget("基本Appbar"),

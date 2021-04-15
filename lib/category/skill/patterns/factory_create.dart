@@ -12,7 +12,7 @@ class FactoryPage extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        TitleWidget("作用"),
+        TitleWidget("模式分析"),
         SubtitleWidget("当你使用factory关键词时，你能控制在使用构造函数时，并不总是创建一个新的该类的对象，比如它可能会从缓存中返回一个已有的实例，或者是返回子类的实例。"),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,

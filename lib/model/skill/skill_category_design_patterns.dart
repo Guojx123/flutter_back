@@ -1,3 +1,4 @@
+import 'package:back/category/skill/patterns/builder_create.dart';
 import 'package:back/category/skill/patterns/factory_create.dart';
 import 'package:back/category/skill/patterns/singleton_create.dart';
 import 'package:back/widgets/demo_item.dart';
@@ -23,6 +24,15 @@ List<DemoItem> buildDesignPatternsCreateDemoItems(String codePath) {
       documentationUrl: 'https://flutter.cn/',
       buildRoute: (context) =>
           BaseWidget('工厂模式', codePath + 'factory_create', FactoryPage()),
+    ),
+    DemoItem(
+      icon: Icons.design_services,
+      title: '建造者模式-创建型',
+      subtitle: '简介',
+      keyword: 'builder',
+      documentationUrl: 'https://flutter.cn/',
+      buildRoute: (context) =>
+          BaseWidget('建造者模式', codePath + 'builder_create', BuilderPage()),
     ),
   ];
 }

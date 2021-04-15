@@ -14,6 +14,7 @@ class _IconPageState extends State<IconPage> {
   @override
   Widget build(BuildContext context) {
     return ListView(
+      physics: BouncingScrollPhysics(),
       children: <Widget>[
         TitleWidget("系统自带默认Icons数据"),
         SubtitleWidget("add 添加"),

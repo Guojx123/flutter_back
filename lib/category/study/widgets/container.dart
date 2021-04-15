@@ -12,6 +12,7 @@ class _ContainerPageState extends State<ContainerPage> {
   @override
   Widget build(BuildContext context) {
     return ListView(
+      physics: BouncingScrollPhysics(),
       children: <Widget>[
         TitleWidget('Container基本使用'),
         SubtitleWidget('Container在没有子节点的时候，会试图变得足够大，Container在带有子节点的时候，会根据子节点的尺寸调节自身大小'),

@@ -17,6 +17,7 @@ class _ColumnPageState extends State<ColumnPage> {
   @override
   Widget build(BuildContext context) {
     return ListView(
+      physics: BouncingScrollPhysics(),
       children: <Widget>[
         TitleWidget('Column MainAxisAlignment'),
         SubtitleWidget("设置主轴：$mainAlignSelection"),

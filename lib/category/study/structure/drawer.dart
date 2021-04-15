@@ -45,6 +45,7 @@ class _DrawerPageState extends State<DrawerPage> {
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
+          physics: BouncingScrollPhysics(),
           children: <Widget>[
             _drawerHeader(),
             ListTile(

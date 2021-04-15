@@ -20,6 +20,7 @@ class _RowPageState extends State<RowPage> {
   @override
   Widget build(BuildContext context) {
     return ListView(
+      physics: BouncingScrollPhysics(),
       children: <Widget>[
         TitleWidget('设置主轴尺寸'),
         SubtitleWidget("尺寸 $sizeSelection"),
