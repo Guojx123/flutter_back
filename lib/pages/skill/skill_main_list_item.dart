@@ -25,7 +25,8 @@ class _SkillMainPageListItemState extends State<SkillMainPageListItem> {
       ),
       child: ExpansionTile(
         title: new Text(_title,style: TextStyle(
-          fontSize: 20,
+          fontSize: 18,
+          color: Colors.white
         ),),
         initiallyExpanded: false,
         children: _itemList

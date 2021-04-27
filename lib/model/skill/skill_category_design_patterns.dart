@@ -1,3 +1,4 @@
+import 'package:back/category/skill/patterns/adapter_structure.dart';
 import 'package:back/category/skill/patterns/builder_create.dart';
 import 'package:back/category/skill/patterns/factory_create.dart';
 import 'package:back/category/skill/patterns/singleton_create.dart';
@@ -33,6 +34,15 @@ List<DemoItem> buildDesignPatternsCreateDemoItems(String codePath) {
       documentationUrl: 'https://flutter.cn/',
       buildRoute: (context) =>
           BaseWidget('建造者模式', codePath + 'builder_create', BuilderPage()),
+    ),
+    DemoItem(
+      icon: Icons.design_services,
+      title: '适配器模式-结构型',
+      subtitle: '简介',
+      keyword: 'adapter',
+      documentationUrl: 'https://flutter.cn/',
+      buildRoute: (context) =>
+          BaseWidget('适配器模式', codePath + 'adapter', AdapterStructurePage()),
     ),
   ];
 }
