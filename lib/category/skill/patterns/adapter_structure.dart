@@ -2,12 +2,12 @@ import 'package:back/widgets/subtitle_widget.dart';
 import 'package:back/widgets/title_widget.dart';
 import 'package:flutter/material.dart';
 
-class AdapterStructurePage extends StatefulWidget {
+class AdapterPage extends StatefulWidget {
   @override
-  _AdapterStructurePageState createState() => _AdapterStructurePageState();
+  _AdapterPageState createState() => _AdapterPageState();
 }
 
-class _AdapterStructurePageState extends State<AdapterStructurePage> {
+class _AdapterPageState extends State<AdapterPage> {
   @override
   Widget build(BuildContext context) {
 
@@ -28,7 +28,7 @@ class _AdapterStructurePageState extends State<AdapterStructurePage> {
                   child: Text("播放音频（mp3）文件")),
               ElevatedButton(
                   onPressed: () {
-                    player.play("avi", "mind me.avi");
+                    player.play("avi", "两只老虎爱跳舞.avi");
                   },
                   child: Text("播放视频（mp4、avi）文件")),
             ],

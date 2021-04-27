@@ -12,7 +12,7 @@ class _CustomIndicatorPageState extends State<CustomIndicatorPage> {
   final List<Widget> _pages = <Widget>[
     ConstrainedBox(
       constraints: const BoxConstraints.expand(),
-      child: FlutterLogo(),
+      child: FlutterLogo(style: FlutterLogoStyle.markOnly,),
     ),
     ConstrainedBox(
       constraints: const BoxConstraints.expand(),

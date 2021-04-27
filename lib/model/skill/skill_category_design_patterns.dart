@@ -1,4 +1,5 @@
 import 'package:back/category/skill/patterns/adapter_structure.dart';
+import 'package:back/category/skill/patterns/bridge_structure.dart';
 import 'package:back/category/skill/patterns/builder_create.dart';
 import 'package:back/category/skill/patterns/factory_create.dart';
 import 'package:back/category/skill/patterns/singleton_create.dart';
@@ -42,7 +43,16 @@ List<DemoItem> buildDesignPatternsCreateDemoItems(String codePath) {
       keyword: 'adapter',
       documentationUrl: 'https://flutter.cn/',
       buildRoute: (context) =>
-          BaseWidget('适配器模式', codePath + 'adapter', AdapterStructurePage()),
+          BaseWidget('适配器模式', codePath + 'adapter', AdapterPage()),
+    ),
+    DemoItem(
+      icon: Icons.design_services,
+      title: '桥接模式-结构型',
+      subtitle: '简介',
+      keyword: 'bridge',
+      documentationUrl: 'https://flutter.cn/',
+      buildRoute: (context) =>
+          BaseWidget('桥接模式', codePath + 'bridge', BridgePage()),
     ),
   ];
 }
