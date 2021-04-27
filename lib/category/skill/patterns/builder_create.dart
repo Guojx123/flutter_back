@@ -1,4 +1,3 @@
-import 'package:back/widgets/item_util.dart';
 import 'package:back/widgets/subtitle_widget.dart';
 import 'package:back/widgets/title_widget.dart';
 import 'package:flutter/material.dart';
@@ -46,6 +45,62 @@ class _BuilderPageState extends State<BuilderPage> {
         ],
       ),
     );
+  }
+}
+
+/// 建造类（生成某款套餐）Director
+class MealBuilder {
+  SetMeal prepareVegMeal() {
+    debugPrint('开始准备养生套餐...');
+    SetMeal setMeal = SetMeal();
+    setMeal.addItem(VegetableSalad());
+    setMeal.addItem(Milk());
+    return setMeal;
+  }
+
+  SetMeal prepareHapMeal() {
+    debugPrint('开始准备快乐套餐...');
+    SetMeal setMeal = SetMeal();
+    setMeal.addItem(ChickenBurger());
+    setMeal.addItem(Coke());
+    return setMeal;
+  }
+}
+
+/// 具体生成器（构造过程的不同实现）Concrete Builders
+class SetMeal {
+  List<Food> _foods = [];
+
+  void addItem(Food food) => _foods.add(food);
+
+  double getCost() {
+    debugPrint('计算所有食品的总价');
+    double cost = 0;
+    for (var item in _foods) {
+      cost += item.price;
+    }
+    return cost;
+  }
+
+  String showFoods() {
+    debugPrint('展示所点的餐品');
+    String list = '';
+    for (var item in _foods) {
+      debugPrint("餐品:" +
+          item.name +
+          ", 包装: " +
+          item.packing().pack() +
+          ", 价格:" +
+          item.price.toString());
+      list += ("餐品:" +
+          item.name +
+          ", 包装: " +
+          item.packing().pack() +
+          ", 价格:" +
+          item.price.toString() +
+          '\n');
+    }
+    return list;
   }
 }
 
@@ -146,59 +201,5 @@ class Glass implements Packing {
   @override
   String pack() {
     return '玻璃杯';
-  }
-}
-
-class SetMeal {
-  List<Food> _foods = [];
-
-  void addItem(Food food) => _foods.add(food);
-
-  double getCost() {
-    debugPrint('计算所有食品的总价');
-    double cost = 0;
-    for (var item in _foods) {
-      cost += item.price;
-    }
-    return cost;
-  }
-
-  String showFoods() {
-    debugPrint('展示所点的餐品');
-    String list = '';
-    for (var item in _foods) {
-      debugPrint("餐品:" +
-          item.name +
-          ", 包装: " +
-          item.packing().pack() +
-          ", 价格:" +
-          item.price.toString());
-      list += ("餐品:" +
-          item.name +
-          ", 包装: " +
-          item.packing().pack() +
-          ", 价格:" +
-          item.price.toString() +
-          '\n');
-    }
-    return list;
-  }
-}
-
-class MealBuilder {
-  SetMeal prepareVegMeal() {
-    debugPrint('开始准备养生套餐...');
-    SetMeal setMeal = SetMeal();
-    setMeal.addItem(VegetableSalad());
-    setMeal.addItem(Milk());
-    return setMeal;
-  }
-
-  SetMeal prepareHapMeal() {
-    debugPrint('开始准备快乐套餐...');
-    SetMeal setMeal = SetMeal();
-    setMeal.addItem(ChickenBurger());
-    setMeal.addItem(Coke());
-    return setMeal;
   }
 }
