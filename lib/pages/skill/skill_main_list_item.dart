@@ -27,7 +27,7 @@ class _SkillMainPageListItemState extends State<SkillMainPageListItem> {
         title: new Text(_title,style: TextStyle(
           fontSize: 20,
         ),),
-        initiallyExpanded: true,
+        initiallyExpanded: false,
         children: _itemList
             .map((e) => listItem(e.title, () {
                   Navigator.push(
