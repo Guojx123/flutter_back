@@ -2,9 +2,12 @@ import 'package:back/model/skill/skill_category_page_carousel.dart';
 import 'package:back/widgets/demo_item.dart';
 import 'package:back/model/skill/skill_category_design_patterns.dart';
 
+import 'skill_category_page_notes.dart';
+
 List<SkillItemCategory> buildSkillCategoryList = [
   designPatternsCreate,
-  carouselCreate
+  carouselCreate,
+  noteCreate,
 ];
 
 /// add item [SkillItemCategory]
@@ -14,8 +17,13 @@ SkillItemCategory designPatternsCreate = SkillItemCategory(
 );
 
 SkillItemCategory carouselCreate = SkillItemCategory(
-  name: '页面轮播',
+  name: '页面轮播控件',
   itemList: buildCarouselCreateDemoItems('lib/category/skill/page_view/'),
+);
+
+SkillItemCategory noteCreate = SkillItemCategory(
+  name: '笔记',
+  itemList: buildNotesCreateDemoItems('lib/category/skill/notes/'),
 );
 
 class SkillItemCategory {

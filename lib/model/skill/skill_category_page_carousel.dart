@@ -1,8 +1,5 @@
 import 'package:back/category/skill/page_view/custom_indicator.dart';
 import 'package:back/category/skill/page_view/indicator.dart';
-import 'package:back/category/skill/patterns/builder_create.dart';
-import 'package:back/category/skill/patterns/factory_create.dart';
-import 'package:back/category/skill/patterns/singleton_create.dart';
 import 'package:back/widgets/demo_item.dart';
 import 'package:flutter/material.dart';
 import 'package:back/Widgets/base_widget.dart';
