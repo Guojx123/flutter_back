@@ -9,27 +9,26 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 
 void main() async {
-
   runApp(
     MultiProvider(
-    providers: [
-      Provider(create: (_) => 1008),
-      ChangeNotifierProvider(create: (_) => ChangeNotifyModel()),
-      ValueListenableProvider<ValueNotifyModel>(
-        create: (_) => ValueNotifyModelWrapper(ValueNotifyModel(0)),
-        updateShouldNotify: (previous, current) => previous.value != current.value,
-      ),
-      StreamProvider<int>(
-        create: (_) => ProviderStream().stream,
-        initialData: 0,
-      ),
-      FutureProvider(create: (_) => providerFuture()),
-      ChangeNotifierProvider(create: (_) => SelectorModel()),
-    ],
-    child: MyApp(),
-  ),);
+      providers: [
+        Provider(create: (_) => 1008),
+        ChangeNotifierProvider(create: (_) => ChangeNotifyModel()),
+        // ValueListenableProvider<ValueNotifyModel>(
+        //   create: (_) => ValueNotifyModelWrapper(ValueNotifyModel(0)),
+        //   updateShouldNotify: (previous, current) => previous.value != current.value,
+        // ),
+        StreamProvider<int>(
+          create: (_) => ProviderStream().stream,
+          initialData: 0,
+        ),
+        FutureProvider(create: (_) => providerFuture()),
+        ChangeNotifierProvider(create: (_) => SelectorModel()),
+      ],
+      child: MyApp(),
+    ),
+  );
 }
-
 
 SystemUiOverlayStyle setNavigationBarTextColor(bool light) {
   return SystemUiOverlayStyle(
@@ -48,7 +47,8 @@ class MyApp extends StatelessWidget {
     if (Platform.isAndroid) {
       // 在组件渲染之后，再覆写状态栏颜色
       // 如果使用了APPBar，则需要修改brightness属性
-      SystemUiOverlayStyle systemUiOverlayStyle = SystemUiOverlayStyle(statusBarColor: Colors.transparent);
+      SystemUiOverlayStyle systemUiOverlayStyle =
+          SystemUiOverlayStyle(statusBarColor: Colors.transparent);
       SystemChrome.setSystemUIOverlayStyle(systemUiOverlayStyle);
     }
     return MaterialApp(
@@ -65,6 +65,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-
-
